@@ -45,7 +45,7 @@ dev_dependencies:
   #flutter_launcher_icons: 
   #  git:
   #    url: git://github.com/dirkbo/flutter_launcher_icons
-
+  
 #flutter_icons:
 #  android: "launcher_icon"
 #  ios: true
@@ -56,6 +56,17 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  msix: ^3.3.1
+
+msix_config:
+  display_name: Wake up Dash!
+  publisher_display_name: aa
+  identity_name: aa
+  publisher: aa
+  msix_version: 0.0.3.0
+  store: true
+  logo_path: ./assets/icon/icon.png
+  #capabilities: internetClient
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
