@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screen/about/about.dart';
+import '../screen/export/export.dart';
+import '../screen/import/import.dart';
 import '../utils/ui_text.dart';
 import '/utils/colors.dart';
 
@@ -19,6 +21,10 @@ class ThisDrawer {
                 ),
               ),
             ),
+            menuItem(context, importAppBarText, ImportScreen()),
+            menuDivider(),
+            menuItem(context, exportAppBarText, ExportScreen()),
+            menuDivider(),
             menuItem(context, aboutAppBarText, AboutScreen()),
             menuDivider(),
           ],

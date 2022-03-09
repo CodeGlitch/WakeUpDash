@@ -101,3 +101,8 @@ prefsRemovePCIndex(prefs, int index) async {
   pcsIndex.remove(index);
   await prefs.setString(pcsIndexKey, json.encode(pcsIndex));
 }
+
+Future<String> export() async {
+  List<PC> pcs = await prefsGetPCs();
+  return json.encode(pcs);
+}
