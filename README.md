@@ -1,7 +1,8 @@
 # Wake up Dash!
 
-Used Flutter to create a simple app to send wake up requests to Wake-on-LAN-enabled devices. 
-![/assets/icon/con.png](/assets/icon/con.png)
+Used Flutter to create a simple app to send wake up requests to Wake-on-LAN-enabled devices.
+
+![/assets/icon/icon.png](/assets/icon/icon.png)
 
 ## Getting Started
 
