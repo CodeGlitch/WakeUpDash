@@ -65,6 +65,8 @@ class _ImportScreenState extends State<ImportScreen> {
                       ? inputImportValidatorMsg
                       : null,
                 ),
+                Text("Import will be implemented in next version, sorry!",
+                    style: TextStyle(color: Colors.red)),
 
                 ///TODO: add checkbox to append or override app content
                 ButtonPadding(
