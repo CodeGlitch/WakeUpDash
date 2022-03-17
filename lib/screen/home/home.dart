@@ -36,8 +36,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ThisAppBar.appBar(context),
-      drawer: ThisDrawer.drawer(context),
+      //appBar: ThisAppBar.appBar(context),
+      appBar: ThisAppBar(context),
+
+      //drawer: ThisDrawer.drawer(context),
+      drawer: ThisDrawer(),
+
       body: MainBody(
         content: SingleChildScrollView(
           child: Column(
