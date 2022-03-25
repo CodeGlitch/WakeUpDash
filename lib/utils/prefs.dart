@@ -106,3 +106,21 @@ Future<String> export() async {
   List<PC> pcs = await prefsGetPCs();
   return json.encode(pcs);
 }
+
+importNewPCList(List<PC> newPCs) async {
+  final prefs = await SharedPreferences.getInstance();
+  clearPrefs(prefs);
+  for (int i = 0; i < newPCs.length; i++) {
+    await prefsAddPC(newPCs[i]);
+  }
+  /*final prefs = await SharedPreferences.getInstance();
+  int index = await prefsGetPCNewIndex(prefs);
+  await prefs.setString(pcKey + index.toString(), json.encode(newPC));
+  await prefsAddPCIndex(prefs, index);*/
+}
+
+clearPrefs(prefs) async {
+  await prefs.clear();
+}
+
+//clearPcIndex() {}

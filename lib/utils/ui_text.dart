@@ -64,8 +64,13 @@ String copiedSuccess = "Text copied.";
 String importAppBarText = "Import";
 String importDataTitle = "Import all your PCs from a formatted string.";
 String inputImportLabelText = "Import PCs string";
-String inputImportHintText = "Insert a the formatted PC string to import";
+String inputImportHintText = "Insert the formatted PC list string to import";
 String inputImportValidatorMsg = "Invalid format!";
 String importExample =
     "[{\"name\":\"home-pc\",\"target\":\"192.168.1.77\",\"mac\":\"AA-AA-AA-AA-AA-AA\",\"port\":9,\"type\":1},{\"name\":\"mysite.com\",\"target\":\"home-pc.mysite.xpto\",\"mac\":\"AA-AA-AA-AA-AA-AA\",\"port\":63221,\"type\":2}]";
 String importExampleTitle = "Import string example:";
+
+String importReplaceWarning = "!!!This will replace your existing data!!!";
+String importPcsFound = " PCs found: ";
+String importPcsValid = " valid, ";
+String importPcsInvalid = " invalid.";

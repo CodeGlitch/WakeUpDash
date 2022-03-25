@@ -25,9 +25,9 @@ class PC {
   static PC fromJson(Map<String, dynamic> json, String prefName) => PC(
         prefName: prefName,
         name: json['name'],
-        target: json['target'] ?? json['ip'],
+        target: json['target'],
         mac: json['mac'],
         port: json['port'],
-        type: json['type'] ?? 1,
+        type: json['type'],
       );
 }
