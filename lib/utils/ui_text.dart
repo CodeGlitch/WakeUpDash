@@ -74,3 +74,4 @@ String importReplaceWarning = "!!!This will replace your existing data!!!";
 String importPcsFound = " PCs found: ";
 String importPcsValid = " valid, ";
 String importPcsInvalid = " invalid.";
+String importSuccess = "Import completed!";

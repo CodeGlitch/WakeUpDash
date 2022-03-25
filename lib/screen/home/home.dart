@@ -35,12 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
   late List<PC> pcs = [];
   @override
   Widget build(BuildContext context) {
+    //getPCs();
     return Scaffold(
       //appBar: ThisAppBar.appBar(context),
       appBar: ThisAppBar(context),
 
       //drawer: ThisDrawer.drawer(context),
-      drawer: ThisDrawer(),
+      drawer: ThisDrawer(refreshPCs: getPCs),
 
       body: MainBody(
         content: SingleChildScrollView(

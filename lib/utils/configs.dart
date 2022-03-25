@@ -1,5 +1,5 @@
 String appName = "Wake up Dash!";
-String appVersion = "0.0.4 (beta)";
+String appVersion = "0.1.0";
 String appSite = "https://wakeupdash.codeglitch.com";
 
 String pcKey = "pc";

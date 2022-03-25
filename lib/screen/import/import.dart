@@ -7,11 +7,13 @@ import '../../components/main_body.dart';
 import '../../model/pc.dart';
 import '../../utils/colors.dart';
 import '../../utils/configs.dart';
+import '../../utils/prefs.dart';
 import '../../utils/ui_text.dart';
 import '../../utils/wol.dart';
 
 class ImportScreen extends StatefulWidget {
-  const ImportScreen({Key? key}) : super(key: key);
+  final Function refreshPCs;
+  const ImportScreen({Key? key, required this.refreshPCs}) : super(key: key);
 
   @override
   State<ImportScreen> createState() => _ImportScreenState();
@@ -75,12 +77,21 @@ class _ImportScreenState extends State<ImportScreen> {
                             importPcsInvalid
                         : null,
                   ),
-                  Text(importReplaceWarning,
-                      style: TextStyle(color: Colors.red)),
+                  Text(
+                    importReplaceWarning,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline5
+                        ?.copyWith(color: ThisAppColors.errorColor),
+                  ),
                   ButtonPadding(
                     content: OutlinedButton(
                       onPressed: () async {
-                        ///TODO: add import logic
+                        List<PC> temp = getImportPCList(importData.text);
+                        await importNewPCList(temp);
+                        showsnackBar(importSuccess, context);
+                        widget.refreshPCs();
+                        Navigator.pop(context);
                       },
                       child: Text(importAppBarText),
                     ),
@@ -143,5 +154,15 @@ class _ImportScreenState extends State<ImportScreen> {
       }
     }
     return invalidPC == 0;
+  }
+
+  List<PC> getImportPCList(String input) {
+    Iterable items = json.decode(input);
+    List<PC> pcList = [];
+    for (int i = 0; i < items.length; i++) {
+      PC pc = PC.fromJson(items.elementAt(i), "0");
+      pcList.add(pc);
+    }
+    return pcList;
   }
 }

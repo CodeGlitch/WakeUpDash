@@ -6,7 +6,8 @@ import '../utils/ui_text.dart';
 import '/utils/colors.dart';
 
 class ThisDrawer extends StatelessWidget {
-  const ThisDrawer({Key? key}) : super(key: key);
+  final Function refreshPCs;
+  const ThisDrawer({Key? key, required this.refreshPCs}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class ThisDrawer extends StatelessWidget {
                 ),
               ),
             ),
-            menuItem(context, importAppBarText, ImportScreen()),
+            menuItem(context, importAppBarText, ImportScreen(refreshPCs: refreshPCs,)),
             menuDivider(),
             menuItem(context, exportAppBarText, ExportScreen()),
             menuDivider(),
