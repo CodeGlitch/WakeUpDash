@@ -87,11 +87,7 @@ class _ImportScreenState extends State<ImportScreen> {
                   ButtonPadding(
                     content: OutlinedButton(
                       onPressed: () async {
-                        List<PC> temp = getImportPCList(importData.text);
-                        await importNewPCList(temp);
-                        showsnackBar(importSuccess, context);
-                        widget.refreshPCs();
-                        Navigator.pop(context);
+                        submitButton();
                       },
                       child: Text(importAppBarText),
                     ),
@@ -124,6 +120,16 @@ class _ImportScreenState extends State<ImportScreen> {
         ),
       ),
     );
+  }
+
+  submitButton() async {
+    if (_formKey.currentState!.validate()) {
+      List<PC> temp = getImportPCList(importData.text);
+      await importNewPCList(temp);
+      showsnackBar(importSuccess, context);
+      widget.refreshPCs();
+      Navigator.pop(context);
+    }
   }
 
   int totalPC = 0;
