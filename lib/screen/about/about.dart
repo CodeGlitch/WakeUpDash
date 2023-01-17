@@ -79,6 +79,6 @@ class AboutScreen extends StatelessWidget {
   }
 
   void _launchURL(String url) async {
-    if (!await launch(url)) throw couldNotLaunch + ": " + url;
+    if (!await launchUrl(Uri.parse(url))) throw couldNotLaunch + ": " + url;
   }
 }
